@@ -8,36 +8,52 @@
 import SwiftUI
 
 struct RecordCell: View {
+    let markImage: Image
     let title: String
     let hours: Int
     let minutes: Int
     
     var body: some View {
-        HStack{
-            VStack(alignment: .leading ,spacing: 8.adjustToScreenHeight) {
+        VStack(alignment: .center ,spacing: 8.adjustToScreenHeight) {
+            HStack(spacing: 2.adjustToScreenWidth){
+                markImage
                 Text(title)
                     .font(.pretendard(size: 16, weight: .regular))
                     .foregroundStyle(.gray200)
-                
-                Text("\(hours)H \(minutes)M")
-                    .font(.pretendard(size: 16, weight: .semibold))
-                    .foregroundStyle(.gray100)
-                
             }
-            .padding(.vertical, 18.adjustToScreenHeight)
-            .padding(.leading, 28.adjustToScreenWidth)
-            Spacer()
+            
+            Text("\(hours)H \(minutes)M")
+                .font(.pretendard(size: 16, weight: .bold))
+                .foregroundStyle(.gray100)
+            
         }
         .frame(maxWidth: .infinity, maxHeight: 88.adjustToScreenHeight)
-        .background(.gray800)
+        .background(
+            
+            LinearGradient(
+                colors: [
+                    Color(.sRGB, red: 18/255, green: 20/255, blue: 24/255, opacity: 1),
+                    Color(.sRGB, red: 20/255, green: 24/255, blue: 33/255, opacity: 1)
+                ],
+                startPoint: .leading,
+                endPoint: .trailing
+            )
+        )
         .cornerRadius(4)
         .overlay(
             RoundedRectangle(cornerRadius: 4)
-                .stroke(.gray600, lineWidth: 1)
+                .stroke(
+                    LinearGradient(
+                        colors: [
+                            Color(.sRGB, red: 82/255, green: 82/255, blue: 82/255, opacity: 1),
+                            Color(.sRGB, red: 60/255, green: 60/255, blue: 60/255, opacity: 1),
+                            Color(.sRGB, red: 46/255, green: 46/255, blue: 46/255, opacity: 1)
+                        ],
+                        startPoint: .leading,
+                        endPoint: .trailing
+                    )
+                    , lineWidth: 1)
         )
     }
 }
 
-#Preview {
-    RecordCell(title: "연간", hours: 200, minutes: 4)
-}
