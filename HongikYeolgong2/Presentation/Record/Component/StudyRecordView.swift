@@ -37,12 +37,12 @@ struct StudyRecordView: View {
                 .frame(height: 24.adjustToScreenHeight)
             
             HStack(spacing: 13.adjustToScreenWidth) {
-                RecordCell(markImage: Image(.clock),
-                           title: selectedDate?.getYearString() ?? Date().getYearString() + "년",
+                RecordCell(celltype: .year,
+                           date: selectedDate,
                            hours: studyTime.yearHours,
                            minutes: studyTime.yearMinutes)
-                RecordCell(markImage: Image(.calendarDots),
-                           title: selectedDate?.formattedMonth() ?? Date().formattedMonth() + "월",
+                RecordCell(celltype: .month,
+                           date: selectedDate,
                            hours: studyTime.monthHours,
                            minutes: studyTime.monthMinutes)
             }

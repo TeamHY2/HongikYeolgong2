@@ -7,17 +7,29 @@
 
 import SwiftUI
 
+enum RecordCellType{
+    case year
+    case month
+}
+
 struct RecordCell: View {
-    let markImage: Image
-    let title: String
+    let celltype: RecordCellType
+    let date: Date
     let hours: Int
     let minutes: Int
+    
+    init(celltype: RecordCellType, date: Date?, hours: Int, minutes: Int) {
+        self.celltype = celltype
+        self.date = date ?? Date()
+        self.hours = hours
+        self.minutes = minutes
+    }
     
     var body: some View {
         VStack(alignment: .center ,spacing: 8.adjustToScreenHeight) {
             HStack(spacing: 2.adjustToScreenWidth){
-                markImage
-                Text(title)
+                Image(getImageForCelltype())
+                Text(getTitleString())
                     .font(.pretendard(size: 16, weight: .regular))
                     .foregroundStyle(.gray200)
             }
@@ -54,6 +66,24 @@ struct RecordCell: View {
                     )
                     , lineWidth: 1)
         )
+    }
+    
+    private func getImageForCelltype() -> ImageResource {
+        switch celltype {
+            case .year:
+                    .clock
+            case .month:
+                    .calendarDots
+        }
+    }
+    
+    private func getTitleString() -> String {
+        switch celltype {
+            case .year:
+                date.getYearString() + "년"
+            case .month:
+                date.formattedMonth() + "월"
+        }
     }
 }
 
