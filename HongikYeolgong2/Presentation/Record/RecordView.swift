@@ -10,7 +10,7 @@ import SwiftUI
 struct RecordView: View {
     @Environment(\.injected.interactors.studyTimeInteractor) var studyTimeInteractor
     @State private var studyTime: Loadable<StudyTime> = .notRequest
-    @State private var selectedDate: Date = Date()
+    @State private var selectedDate: Date?
     
     var body: some View {
         NetworkStateView(
@@ -19,12 +19,12 @@ struct RecordView: View {
         ) {
             VStack(spacing: 0) {
                 // 데이터가 없을 경우 디폴트값으로 표현
-                StudyRecordView(selectedDate: selectedDate, studyTime: studyTime.value ?? StudyTime())
+                StudyRecordView(selectedDate: $selectedDate, studyTime: studyTime.value ?? StudyTime())
                 
                 Spacer()
                     .frame(height: 52.adjustToScreenHeight)
                 
-                CaledarView()
+                CaledarView(selectedDate: $selectedDate)
                 
                 Spacer()
                 
