@@ -20,11 +20,11 @@ enum MoveType {
 }
 
 struct CaledarView: View {
-    @Environment(\.injected.interactors.calendarDataInteractor) var calendarDataInteractor
-    @State private var AllStudy = [AllStudyRecord]()
+    //@Environment(\.injected.interactors.calendarDataInteractor) var calendarDataInteractor
+    @State var AllStudy : [AllStudyRecord]
     // 캘린더 표시용도
-    @State var currentDate = Date()
-    @State var currentMonth = [Day]()
+    @Binding var currentDate: Date
+    @Binding var currentMonth: [Day]
     // 사용자 날짜 선택 파악 용도 -> nil 선택 x
     @State var selectedDateString: String?
     @Binding var selectedDate: Date?
@@ -86,7 +86,7 @@ struct CaledarView: View {
             Spacer().frame(height: 8.adjustToScreenHeight)
             
 //             seleteMonth가 변경될때마다 makeMonth의 값을 받아서 currentMonth에 업데이트
-            LazyVGrid(columns: columns, spacing: 5.adjustToScreenHeight) {
+            LazyVGrid(columns: columns, spacing: 7.adjustToScreenHeight) {
                 ForEach(currentMonth, id: \.id) { day in
                     CalendarCell(dayInfo: day,
                                  isSelected: isSelected(day: day)) {
@@ -94,11 +94,9 @@ struct CaledarView: View {
                     }
                 }
             }
-            
-            Spacer()
         }
         .onAppear {
-            calendarDataInteractor.getAllStudy(studyRecords: $AllStudy)            
+            //calendarDataInteractor.getAllStudy(studyRecords: $AllStudy)
             currentMonth = makeMonth(date: currentDate, roomUsageInfo: AllStudy)
         }
         .onChange(of: AllStudy) { newAllStudy in

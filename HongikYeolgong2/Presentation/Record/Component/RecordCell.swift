@@ -39,7 +39,8 @@ struct RecordCell: View {
                 .foregroundStyle(.gray100)
             
         }
-        .frame(maxWidth: .infinity, maxHeight: 88.adjustToScreenHeight)
+        .frame(maxWidth: .infinity)
+        .frame(height: 76.adjustToScreenHeight)
         .background(
             
             LinearGradient(

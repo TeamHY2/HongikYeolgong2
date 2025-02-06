@@ -51,10 +51,10 @@ struct CalendarCell: View {
                     .font(.suite(size: 14, weight: .medium))
                     .foregroundStyle(getForegroundStyle())
             }
-            .frame(width: 40.adjustToScreenWidth,height: 33.adjustToScreenHeight)
+            .frame(width: 38.adjustToScreenWidth,height: 38.adjustToScreenHeight)
             .background(Image(getImageForCellStyle())
                 .resizable()
-                .frame(width: 40.adjustToScreenWidth,height: 33.adjustToScreenHeight))
+                .frame(width: 48.adjustToScreenWidth,height: 48.adjustToScreenHeight))
             .cornerRadius(8)
             .opacity(isVisible ? 0 : 1)
             .overlay(isSelected ? nil : Color.dark.opacity(0.6))
