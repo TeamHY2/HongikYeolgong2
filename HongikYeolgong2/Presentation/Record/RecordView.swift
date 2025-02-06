@@ -98,7 +98,7 @@ struct RecordView: View {
         }
         .padding(.horizontal, 32.adjustToScreenWidth)
         .padding(.top, 32.adjustToScreenHeight)
-        .padding(.bottom, 36.adjustToScreenHeight)
+        .padding(.bottom, 70.adjustToScreenHeight)
         .modifier(IOSBackground())
     }
     
@@ -114,7 +114,9 @@ struct RecordView: View {
         guard let view = controller.view else { return nil }
 
         let targetSize = CGSize(width: UIScreen.main.bounds.width, height: 666.adjustToScreenHeight)
-        view.frame = CGRect(origin: .zero, size: targetSize)
+        
+        let fittingSize = view.sizeThatFits(targetSize)
+        view.frame = CGRect(origin: .zero, size: fittingSize)
         view.backgroundColor = .dark
 
         let renderer = UIGraphicsImageRenderer(size: targetSize)
