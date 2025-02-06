@@ -13,8 +13,6 @@ struct RecordView: View {
     @State private var studyTime: Loadable<StudyTime> = .notRequest
     @State private var allStudy: Loadable<[AllStudyRecord]> = .notRequest
     @State private var selectedDate: Date?
-    @State private var showShareSheet = false
-    @State private var shareImage: UIImage?
     
     // 캘린더 상태를 외부에서 관리
     @State private var currentDate = Date()
