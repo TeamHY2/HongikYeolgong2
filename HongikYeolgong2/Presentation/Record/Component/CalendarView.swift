@@ -67,6 +67,7 @@ struct CaledarView: View {
                     }) {
                         Image(.icCalendarRight)
                     }
+                    .overlay(isCurrentMonth() ? Color.dark.opacity(0.6) : nil)
                 }
             }
             
@@ -226,6 +227,11 @@ extension CaledarView {
     // 선택된 날짜인지 확인
     private func isSelected(day: Day) -> Bool {
         return selectedDateString != nil ? day.dayOfNumber == selectedDateString : true
+    }
+    
+    // 현재 달과 같은지 확인
+    private func isCurrentMonth() -> Bool {
+        return calendar.component(.month, from: currentDate) == calendar.component(.month, from: Date())
     }
 }
 

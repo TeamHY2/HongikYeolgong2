@@ -57,7 +57,7 @@ struct CalendarCell: View {
                 .frame(width: 48.adjustToScreenWidth,height: 48.adjustToScreenHeight))
             .cornerRadius(8)
             .opacity(isVisible ? 0 : 1)
-            .overlay(isSelected ? nil : Color.dark.opacity(0.6))
+            .overlay(isVisible || isSelected ? nil : Color.dark.opacity(0.6))
             .animation(.easeInOut(duration: 0.2), value: isSelected)
         }
         .disabled(isVisible || cellStyle == .dayCount00)
