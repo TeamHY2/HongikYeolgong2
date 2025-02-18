@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Photos
 
 struct SharedView: View {
     @Binding var isPresented: Bool
@@ -108,7 +109,24 @@ struct SharedView: View {
     
     /// 이미지 저장
     func saveImage() {
-        
+        let status = PHPhotoLibrary.authorizationStatus()
+        // 접근 권한 상태 확인
+        if status == .authorized {
+            // 이미지 저장
+            UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+        } else if status == .denied || status == .restricted {
+            print("사진 접근 권한 없음")
+        } else {
+            // 접근 권한 여부
+            PHPhotoLibrary.requestAuthorization { newStatus in
+                if newStatus == .authorized {
+                    UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+                    print("이미지 저장 완료")
+                } else {
+                    print("사용자가 사진 접근을 거부")
+                }
+            }
+        }
     }
     
     /// 인스타 공유
