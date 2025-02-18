@@ -163,6 +163,7 @@
 		98B5F0112CDB9990007CF5FA /* StudyTimeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B5F0102CDB9990007CF5FA /* StudyTimeInteractor.swift */; };
 		98B5F0132CDBB905007CF5FA /* StudyTimeMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B5F0122CDBB905007CF5FA /* StudyTimeMapper.swift */; };
 		98D144112CDFAC4D0092708E /* NetworkingErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D144102CDFAC4D0092708E /* NetworkingErrorView.swift */; };
+		98E55F112D638AE90041E3C0 /* SharedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E55F102D638AE90041E3C0 /* SharedView.swift */; };
 		98EC95392CE4B93C00278DBD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 98EC95382CE4B93C00278DBD /* GoogleService-Info.plist */; };
 		98EC953B2CE4B97000278DBD /* StudyRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EC953A2CE4B97000278DBD /* StudyRecordView.swift */; };
 		98EC953D2CE4B9CC00278DBD /* NetworkStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EC953C2CE4B9CC00278DBD /* NetworkStateView.swift */; };
@@ -347,6 +348,7 @@
 		98B5F0102CDB9990007CF5FA /* StudyTimeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyTimeInteractor.swift; sourceTree = "<group>"; };
 		98B5F0122CDBB905007CF5FA /* StudyTimeMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyTimeMapper.swift; sourceTree = "<group>"; };
 		98D144102CDFAC4D0092708E /* NetworkingErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingErrorView.swift; sourceTree = "<group>"; };
+		98E55F102D638AE90041E3C0 /* SharedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedView.swift; sourceTree = "<group>"; };
 		98EC95382CE4B93C00278DBD /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		98EC953A2CE4B97000278DBD /* StudyRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyRecordView.swift; sourceTree = "<group>"; };
 		98EC953C2CE4B9CC00278DBD /* NetworkStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkStateView.swift; sourceTree = "<group>"; };
@@ -698,6 +700,7 @@
 			children = (
 				98F9D8422CDA2DE100DE12BB /* Component */,
 				475B86DE2CA1AF1E000534B2 /* RecordView.swift */,
+				98E55F102D638AE90041E3C0 /* SharedView.swift */,
 			);
 			path = Record;
 			sourceTree = "<group>";
@@ -1361,6 +1364,7 @@
 				4774C7BB2CDF632300CDD479 /* WithdrawResponseDTO.swift in Sources */,
 				47D5EDCD2CCBCB6D00ACA469 /* ImageBackground.swift in Sources */,
 				473E8EB42CCE6827000F102C /* TimeInterval+.swift in Sources */,
+				98E55F112D638AE90041E3C0 /* SharedView.swift in Sources */,
 				478B75502CE679A8000190EF /* SubmitButton.swift in Sources */,
 				4763FFB32CB90E3800990336 /* InteractorsContainer.swift in Sources */,
 				470723182CBC29510046469F /* AppleLoginManager.swift in Sources */,

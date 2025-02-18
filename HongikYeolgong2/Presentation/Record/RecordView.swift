@@ -7,16 +7,21 @@
 
 import SwiftUI
 
+
 struct RecordView: View {
     @Environment(\.injected.interactors.studyTimeInteractor) var studyTimeInteractor
     @Environment(\.injected.interactors.calendarDataInteractor) var calendarDataInteractor
     @State private var studyTime: Loadable<StudyTime> = .notRequest
     @State private var allStudy: Loadable<[AllStudyRecord]> = .notRequest
     @State private var selectedDate: Date?
+    @State private var shareImage: UIImage?
     
     // 캘린더 상태를 외부에서 관리
     @State private var currentDate = Date()
     @State private var currentMonth: [Day] = []
+    
+    // 공유 화면 표시
+    @State private var isShareSheetPresented: Bool = false
     
     var body: some View {
         NetworkStateView(
@@ -29,10 +34,8 @@ struct RecordView: View {
                 Spacer()
                 // 공유하기 버튼
                 Button {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                        if let image = captureAsImage(){
-                            shareImage(image: image)
-                        }
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                        captureAsImage()
                     }
                 } label: {
                     HStack(spacing: 4){
@@ -53,6 +56,17 @@ struct RecordView: View {
             .onAppear(perform: loadData)
         }
         .modifier(IOSBackground())
+        .fullScreenCover(isPresented: $isShareSheetPresented) {
+            if let shareImage = shareImage {
+                SharedView(isPresented: $isShareSheetPresented, image: shareImage)
+            }
+        }
+        .transition(.move(edge: .bottom))
+        .onChange(of: shareImage) { newValue in
+            if newValue != nil {
+                isShareSheetPresented = true
+            }
+        }
     }
     
     // 기록 관련 컴포넌트
@@ -107,31 +121,21 @@ struct RecordView: View {
     }
     
     // 캡처 함수 (공유 이미지 생성)
-    func captureAsImage() -> UIImage? {
+    func captureAsImage() {
         let controller = UIHostingController(rootView: snapshotContent)
-        guard let view = controller.view else { return nil }
-
+        guard let view = controller.view else { return }
+        
         let targetSize = CGSize(width: UIScreen.main.bounds.width, height: 666.adjustToScreenHeight)
         
         let fittingSize = view.sizeThatFits(targetSize)
         view.frame = CGRect(origin: .zero, size: fittingSize)
         view.backgroundColor = .dark
-
+        
         let renderer = UIGraphicsImageRenderer(size: targetSize)
         let image = renderer.image { _ in
             view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
         }
-        return image
-    }
-    
-    // 공유하기 기능
-    func shareImage(image: UIImage) {
-        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-              let rootViewController = windowScene.windows.first?.rootViewController else {
-            return
-        }
         
-        let activityViewController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
-        rootViewController.present(activityViewController, animated: true)
+        shareImage = image
     }
 }
