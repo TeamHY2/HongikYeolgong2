@@ -164,6 +164,7 @@
 		98B5F0132CDBB905007CF5FA /* StudyTimeMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B5F0122CDBB905007CF5FA /* StudyTimeMapper.swift */; };
 		98D144112CDFAC4D0092708E /* NetworkingErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D144102CDFAC4D0092708E /* NetworkingErrorView.swift */; };
 		98E55F112D638AE90041E3C0 /* SharedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E55F102D638AE90041E3C0 /* SharedView.swift */; };
+		98E55F132D66295C0041E3C0 /* ToastModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E55F122D66295C0041E3C0 /* ToastModifier.swift */; };
 		98EC95392CE4B93C00278DBD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 98EC95382CE4B93C00278DBD /* GoogleService-Info.plist */; };
 		98EC953B2CE4B97000278DBD /* StudyRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EC953A2CE4B97000278DBD /* StudyRecordView.swift */; };
 		98EC953D2CE4B9CC00278DBD /* NetworkStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EC953C2CE4B9CC00278DBD /* NetworkStateView.swift */; };
@@ -349,6 +350,7 @@
 		98B5F0122CDBB905007CF5FA /* StudyTimeMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyTimeMapper.swift; sourceTree = "<group>"; };
 		98D144102CDFAC4D0092708E /* NetworkingErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingErrorView.swift; sourceTree = "<group>"; };
 		98E55F102D638AE90041E3C0 /* SharedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedView.swift; sourceTree = "<group>"; };
+		98E55F122D66295C0041E3C0 /* ToastModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastModifier.swift; sourceTree = "<group>"; };
 		98EC95382CE4B93C00278DBD /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		98EC953A2CE4B97000278DBD /* StudyRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyRecordView.swift; sourceTree = "<group>"; };
 		98EC953C2CE4B9CC00278DBD /* NetworkStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkStateView.swift; sourceTree = "<group>"; };
@@ -443,6 +445,7 @@
 				47D5EDCC2CCBCB6D00ACA469 /* ImageBackground.swift */,
 				473E8EB12CCE5267000F102C /* SystemOverlay.swift */,
 				478F84362CD30A8F0097CAA1 /* IOSBackground.swift */,
+				98E55F122D66295C0041E3C0 /* ToastModifier.swift */,
 			);
 			path = Modifier;
 			sourceTree = "<group>";
@@ -1316,6 +1319,7 @@
 				47F4F6992CC89A6900543D24 /* SignUpResponseDTO.swift in Sources */,
 				470722FE2CBC15DA0046469F /* NetworkProtocol.swift in Sources */,
 				98FB764E2D00A44600BBCB8B /* PromotionData.swift in Sources */,
+				98E55F132D66295C0041E3C0 /* ToastModifier.swift in Sources */,
 				47F635052CC3EC1A0034EAA9 /* Department.swift in Sources */,
 				478F84412CD33F620097CAA1 /* WeekFieldResponseDTO.swift in Sources */,
 				473E8EBA2CCEA702000F102C /* StudySessionResponseDTO.swift in Sources */,

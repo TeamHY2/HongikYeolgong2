@@ -10,6 +10,7 @@ import Photos
 
 struct SharedView: View {
     @Binding var isPresented: Bool
+    @Binding var isToastShow: Bool
     @Environment(\.dismiss) var dismiss
     var image: UIImage
     
@@ -113,6 +114,8 @@ struct SharedView: View {
         if status == .authorized {
             // 이미지 저장
             UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+            isToastShow.toggle()
+            isPresented.toggle()
         } else if status == .denied || status == .restricted {
             print("사진 접근 권한 없음")
         } else {
@@ -120,6 +123,8 @@ struct SharedView: View {
             PHPhotoLibrary.requestAuthorization { newStatus in
                 if newStatus == .authorized {
                     UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+                    isToastShow.toggle()
+                    isPresented.toggle()
                     print("이미지 저장 완료")
                 } else {
                     print("사용자가 사진 접근을 거부")
