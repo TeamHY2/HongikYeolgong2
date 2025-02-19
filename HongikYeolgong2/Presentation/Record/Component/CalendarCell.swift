@@ -62,7 +62,7 @@ struct CalendarCell: View {
             )
             .opacity(isVisible ? 0 : 1)
 //            .overlay(isVisible || isSelected ? nil : Color.dark.opacity(0.8))
-            .animation(.easeInOut(duration: 0.2), value: isSelected)
+            .animation(.easeOut(duration: 0.12), value: isSelected)
         }
         .disabled(isVisible)
     }
