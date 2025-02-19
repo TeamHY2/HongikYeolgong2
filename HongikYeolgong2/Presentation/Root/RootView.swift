@@ -29,7 +29,7 @@ struct RootView: View {
                     .onAppear {
                         userDataInteractor.getUserProfile()
                     }
-                    .systemOverlay(isPresented: $isPromotionPresented) {
+                    .systemOverlayZstck(isPresented: $isPromotionPresented) {
                         PromotionPopupView(
                             isPromotionPopupPresented: $isPromotionPresented,
                             promotionData: promotionData,
@@ -50,7 +50,7 @@ struct RootView: View {
         .fullScreenCover(isPresented: $isWebViewPresented) {
             WebViewWithNavigation(url: promotionData.detailUrl, title: "상세보기")
         }
-        .systemOverlay(isPresented: $showAppUpdateModal, content: {
+        .systemOverlayZstck(isPresented: $showAppUpdateModal, content: {
             ModalView(isPresented: $showAppUpdateModal,
                       type: .warning,
                       title: "원활한 서비스 이용을 위해 최신 버전으로\n업데이트가 필요합니다.",
