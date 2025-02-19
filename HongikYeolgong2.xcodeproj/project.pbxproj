@@ -1603,7 +1603,7 @@
 		};
 		47B1D4CE2C9CB1760071B62B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 47A3DDC52CE3146700FEA779 /* Secrets-prod.xcconfig */;
+			baseConfigurationReference = 98B5F0092CDB362C007CF5FA /* Secrets-dev.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1675,7 +1675,7 @@
 		};
 		47B1D4D12C9CB1760071B62B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 47A3DDC52CE3146700FEA779 /* Secrets-prod.xcconfig */;
+			baseConfigurationReference = 98B5F0092CDB362C007CF5FA /* Secrets-dev.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -1720,7 +1720,7 @@
 		};
 		47B1D4D42C9CB1760071B62B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 47A3DDC52CE3146700FEA779 /* Secrets-prod.xcconfig */;
+			baseConfigurationReference = 98B5F0092CDB362C007CF5FA /* Secrets-dev.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;

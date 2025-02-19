@@ -13,7 +13,7 @@ struct RecordView: View {
     @Environment(\.injected.interactors.calendarDataInteractor) var calendarDataInteractor
     @State private var studyTime: Loadable<StudyTime> = .notRequest
     @State private var allStudy: Loadable<[AllStudyRecord]> = .notRequest
-    @State private var selectedDate: Date?
+    @State private var selectedDate: Date = Date()
     @State private var shareImage: UIImage?
     
     // 캘린더 상태를 외부에서 관리
@@ -67,6 +67,9 @@ struct RecordView: View {
                 isShareSheetPresented = true
             }
         }
+        .onChange(of: selectedDate) { selectedDate in
+            studyTimeInteractor.getStudyTime(StudyTime: $studyTime, date: selectedDate)
+        }
     }
     
     // 기록 관련 컴포넌트
@@ -116,7 +119,7 @@ struct RecordView: View {
     
     // 데이터 불러오기
     func loadData() -> Void {
-        studyTimeInteractor.getStudyTime(StudyTime: $studyTime)
+        studyTimeInteractor.getStudyTime(StudyTime: $studyTime, date: selectedDate)
         calendarDataInteractor.getAllStudy(studyRecords: $allStudy)
     }
     

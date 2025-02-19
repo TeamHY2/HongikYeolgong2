@@ -20,14 +20,13 @@ enum MoveType {
 }
 
 struct CaledarView: View {
-    //@Environment(\.injected.interactors.calendarDataInteractor) var calendarDataInteractor
     @State var AllStudy : [AllStudyRecord]
     // 캘린더 표시용도
     @Binding var currentDate: Date
     @Binding var currentMonth: [Day]
     // 사용자 날짜 선택 파악 용도 -> nil 선택 x
     @State var selectedDateString: String?
-    @Binding var selectedDate: Date?
+    @Binding var selectedDate: Date
     private let calendar = Calendar.current
     
     private let columns = [GridItem(.flexible(), spacing: 5.adjustToScreenWidth),
@@ -202,7 +201,7 @@ extension CaledarView {
         
         currentDate = modifieDate
         selectedDateString = nil
-        selectedDate = nil
+        selectedDate = Date()
         currentMonth = makeMonth(date: currentDate, roomUsageInfo: AllStudy)
     }
     
@@ -216,7 +215,7 @@ extension CaledarView {
         if let newDate = calendar.date(from: components) {
             if selectedDate == newDate {
                 selectedDateString = nil
-                selectedDate = nil
+                selectedDate = Date()
             } else {
                 selectedDateString = day.dayOfNumber
                 selectedDate = newDate

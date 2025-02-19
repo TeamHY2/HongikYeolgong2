@@ -21,9 +21,6 @@ final class CalendarDataInteractorImpl: CalendarDataInteractor {
             .getAllStudyRecords()
             .receive(on: DispatchQueue.main)
             .sinkToLoadble(studyRecords)
-//            .sink(receiveCompletion: { _ in }) {
-//                studyRecords.wrappedValue = $0
-//            }
             .store(in: cancleBag)
     }
 }
