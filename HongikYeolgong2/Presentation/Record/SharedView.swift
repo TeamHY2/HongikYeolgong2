@@ -79,7 +79,7 @@ struct SharedView: View {
                     .background(.gray800)
                     .cornerRadius(4)
                 }
-
+                
                 // 인스타 공유 버튼
                 Button {
                     shareToInstagram()
@@ -103,7 +103,6 @@ struct SharedView: View {
                 .resizable()
                 .scaledToFill()
                 .ignoresSafeArea(.all)
-                //.frame(maxWidth: .infinity)
         }
     }
     
@@ -131,6 +130,31 @@ struct SharedView: View {
     
     /// 인스타 공유
     func shareToInstagram() {
+        let appID = SecretKeys.metaAppID
         
+        // 인스타 설치 확인
+        guard let instagramURL = URL(string: "instagram-stories://share"),
+              UIApplication.shared.canOpenURL(instagramURL) else {
+            // 인스타 설치 링크
+            guard let instagramURL = URL(string: "https://apps.apple.com/kr/app/instagram/id389801252") else {
+                return
+            }
+            return UIApplication.shared.open(instagramURL)
+        }
+        
+        // png파일로 이미지 변환 및 스토리 주소 등록
+        guard let stickerData = image.pngData(),
+              let urlScheme = URL(string: "instagram-stories://share?source_application=\(appID)") else { return }
+        
+        let pasteboardItems: [String: Any] = [
+            "com.instagram.sharedSticker.backgroundImage": stickerData
+        ]
+        
+        let pasteboardOptions = [
+            UIPasteboard.OptionsKey.expirationDate: Date().addingTimeInterval(60 * 5)
+        ]
+        
+        UIPasteboard.general.setItems([pasteboardItems], options: pasteboardOptions)
+        UIApplication.shared.open(urlScheme, options: [:], completionHandler: nil)
     }
 }
