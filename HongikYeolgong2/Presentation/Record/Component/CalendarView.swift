@@ -65,9 +65,9 @@ struct CaledarView: View {
                     Button(action: {
                         changeMonth(.next)
                     }) {
-                        Image(.icCalendarRight)
+                        Image(isCurrentMonth() ? .isCalendarRightDisabled : .icCalendarRight)
                     }
-                    .overlay(isCurrentMonth() ? Color.dark.opacity(0.6) : nil)
+                    .disabled(isCurrentMonth())
                 }
             }
             
@@ -231,7 +231,7 @@ extension CaledarView {
     
     // 현재 달과 같은지 확인
     private func isCurrentMonth() -> Bool {
-        return calendar.component(.month, from: currentDate) == calendar.component(.month, from: Date())
+        return calendar.compare(currentDate, to: Date(), toGranularity: .month) == .orderedSame
     }
 }
 
