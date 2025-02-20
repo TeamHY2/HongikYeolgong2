@@ -34,11 +34,9 @@ struct ToastModifier: ViewModifier {
                     .padding(.vertical, 4)
                     .background(.gray800)
                     .cornerRadius(8)
-                    .transition(.move(edge: .top).combined(with: .opacity))
-                    .animation(.easeInOut(duration: 0.3), value: isToastShow)
                     Spacer()
                 }
-                //.transition(.move(edge: .top).combined(with: .opacity))
+                .transition(.move(edge: .top).combined(with: .opacity))
             }
         }
         .onChange(of: isToastShow) { _ in
