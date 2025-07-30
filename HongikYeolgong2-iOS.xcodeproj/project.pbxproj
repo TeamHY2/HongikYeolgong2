@@ -6,12 +6,26 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		EE963F7F2E3A6BCB002D038F /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = EE963F7E2E3A6BCB002D038F /* RxCocoa */; };
+		EE963F812E3A6BCB002D038F /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = EE963F802E3A6BCB002D038F /* RxRelay */; };
+		EE963F832E3A6BCB002D038F /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EE963F822E3A6BCB002D038F /* RxSwift */; };
+		EE963F862E3A6D54002D038F /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = EE963F852E3A6D54002D038F /* FirebaseCore */; };
+		EE963F882E3A6D54002D038F /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = EE963F872E3A6D54002D038F /* FirebaseFirestore */; };
+		EE963F8B2E3A6D71002D038F /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = EE963F8A2E3A6D71002D038F /* SnapKit */; };
+		EE963F8E2E3A6D8D002D038F /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = EE963F8D2E3A6D8D002D038F /* Then */; };
+		EE963F912E3A6DD2002D038F /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = EE963F902E3A6DD2002D038F /* CombineMoya */; };
+		EE963F932E3A6DD2002D038F /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = EE963F922E3A6DD2002D038F /* Moya */; };
+		EE963F952E3A6DD2002D038F /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = EE963F942E3A6DD2002D038F /* ReactiveMoya */; };
+		EE963F972E3A6DD2002D038F /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = EE963F962E3A6DD2002D038F /* RxMoya */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		EEECC8272E37D17500F0EB32 /* HongikYeolgong2-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HongikYeolgong2-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		EEECC8392E37D17700F0EB32 /* Exceptions for "HongikYeolgong2-iOS" folder in "HongikYeolgong2-iOS" target */ = {
+		EE963F7C2E3A6A92002D038F /* Exceptions for "HongikYeolgong2-iOS" folder in "HongikYeolgong2-iOS" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
@@ -24,7 +38,7 @@
 		EEECC8292E37D17500F0EB32 /* HongikYeolgong2-iOS */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				EEECC8392E37D17700F0EB32 /* Exceptions for "HongikYeolgong2-iOS" folder in "HongikYeolgong2-iOS" target */,
+				EE963F7C2E3A6A92002D038F /* Exceptions for "HongikYeolgong2-iOS" folder in "HongikYeolgong2-iOS" target */,
 			);
 			path = "HongikYeolgong2-iOS";
 			sourceTree = "<group>";
@@ -36,6 +50,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE963F832E3A6BCB002D038F /* RxSwift in Frameworks */,
+				EE963F812E3A6BCB002D038F /* RxRelay in Frameworks */,
+				EE963F932E3A6DD2002D038F /* Moya in Frameworks */,
+				EE963F972E3A6DD2002D038F /* RxMoya in Frameworks */,
+				EE963F952E3A6DD2002D038F /* ReactiveMoya in Frameworks */,
+				EE963F862E3A6D54002D038F /* FirebaseCore in Frameworks */,
+				EE963F8E2E3A6D8D002D038F /* Then in Frameworks */,
+				EE963F8B2E3A6D71002D038F /* SnapKit in Frameworks */,
+				EE963F882E3A6D54002D038F /* FirebaseFirestore in Frameworks */,
+				EE963F912E3A6DD2002D038F /* CombineMoya in Frameworks */,
+				EE963F7F2E3A6BCB002D038F /* RxCocoa in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +103,17 @@
 			);
 			name = "HongikYeolgong2-iOS";
 			packageProductDependencies = (
+				EE963F7E2E3A6BCB002D038F /* RxCocoa */,
+				EE963F802E3A6BCB002D038F /* RxRelay */,
+				EE963F822E3A6BCB002D038F /* RxSwift */,
+				EE963F852E3A6D54002D038F /* FirebaseCore */,
+				EE963F872E3A6D54002D038F /* FirebaseFirestore */,
+				EE963F8A2E3A6D71002D038F /* SnapKit */,
+				EE963F8D2E3A6D8D002D038F /* Then */,
+				EE963F902E3A6DD2002D038F /* CombineMoya */,
+				EE963F922E3A6DD2002D038F /* Moya */,
+				EE963F942E3A6DD2002D038F /* ReactiveMoya */,
+				EE963F962E3A6DD2002D038F /* RxMoya */,
 			);
 			productName = "HongikYeolgong2-iOS";
 			productReference = EEECC8272E37D17500F0EB32 /* HongikYeolgong2-iOS.app */;
@@ -107,6 +143,13 @@
 			);
 			mainGroup = EEECC81E2E37D17500F0EB32;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				EE963F7D2E3A6BCB002D038F /* XCRemoteSwiftPackageReference "RxSwift" */,
+				EE963F842E3A6D54002D038F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				EE963F892E3A6D71002D038F /* XCRemoteSwiftPackageReference "SnapKit" */,
+				EE963F8C2E3A6D8D002D038F /* XCRemoteSwiftPackageReference "Then" */,
+				EE963F8F2E3A6DD2002D038F /* XCRemoteSwiftPackageReference "Moya" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = EEECC8282E37D17500F0EB32 /* Products */;
 			projectDirPath = "";
@@ -149,9 +192,9 @@
 				INFOPLIST_FILE = "HongikYeolgong2-iOS/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -159,9 +202,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hongikYeolgong2.HongikYeolgong2-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -176,9 +223,9 @@
 				INFOPLIST_FILE = "HongikYeolgong2-iOS/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -186,9 +233,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hongikYeolgong2.HongikYeolgong2-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -333,6 +384,107 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EE963F7D2E3A6BCB002D038F /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.9.0;
+			};
+		};
+		EE963F842E3A6D54002D038F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.0.0;
+			};
+		};
+		EE963F892E3A6D71002D038F /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+		EE963F8C2E3A6D8D002D038F /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+		EE963F8F2E3A6DD2002D038F /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EE963F7E2E3A6BCB002D038F /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EE963F7D2E3A6BCB002D038F /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		EE963F802E3A6BCB002D038F /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EE963F7D2E3A6BCB002D038F /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		EE963F822E3A6BCB002D038F /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EE963F7D2E3A6BCB002D038F /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		EE963F852E3A6D54002D038F /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EE963F842E3A6D54002D038F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+		EE963F872E3A6D54002D038F /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EE963F842E3A6D54002D038F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		EE963F8A2E3A6D71002D038F /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EE963F892E3A6D71002D038F /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		EE963F8D2E3A6D8D002D038F /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EE963F8C2E3A6D8D002D038F /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
+		};
+		EE963F902E3A6DD2002D038F /* CombineMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EE963F8F2E3A6DD2002D038F /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = CombineMoya;
+		};
+		EE963F922E3A6DD2002D038F /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EE963F8F2E3A6DD2002D038F /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		EE963F942E3A6DD2002D038F /* ReactiveMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EE963F8F2E3A6DD2002D038F /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = ReactiveMoya;
+		};
+		EE963F962E3A6DD2002D038F /* RxMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EE963F8F2E3A6DD2002D038F /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = RxMoya;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EEECC81F2E37D17500F0EB32 /* Project object */;
 }
