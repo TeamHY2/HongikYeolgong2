@@ -6,6 +6,18 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		EE901FB82E3B669B009784E1 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = EE901FB72E3B669B009784E1 /* RxCocoa */; };
+		EE901FBA2E3B669B009784E1 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = EE901FB92E3B669B009784E1 /* RxRelay */; };
+		EE901FBC2E3B669B009784E1 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EE901FBB2E3B669B009784E1 /* RxSwift */; };
+		EE901FBF2E3B66B2009784E1 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = EE901FBE2E3B66B2009784E1 /* Moya */; };
+		EE901FC12E3B66B2009784E1 /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = EE901FC02E3B66B2009784E1 /* RxMoya */; };
+		EE901FC42E3B66CC009784E1 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = EE901FC32E3B66CC009784E1 /* SnapKit */; };
+		EE901FC72E3B66E1009784E1 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = EE901FC62E3B66E1009784E1 /* Then */; };
+		EE901FCA2E3B6758009784E1 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = EE901FC92E3B6758009784E1 /* FirebaseCore */; };
+		EE901FCC2E3B6758009784E1 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = EE901FCB2E3B6758009784E1 /* FirebaseRemoteConfig */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		EEECC8272E37D17500F0EB32 /* HongikYeolgong2-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HongikYeolgong2-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -38,6 +50,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE901FCC2E3B6758009784E1 /* FirebaseRemoteConfig in Frameworks */,
+				EE901FC12E3B66B2009784E1 /* RxMoya in Frameworks */,
+				EE901FBC2E3B669B009784E1 /* RxSwift in Frameworks */,
+				EE901FBA2E3B669B009784E1 /* RxRelay in Frameworks */,
+				EE901FC72E3B66E1009784E1 /* Then in Frameworks */,
+				EE901FC42E3B66CC009784E1 /* SnapKit in Frameworks */,
+				EE901FBF2E3B66B2009784E1 /* Moya in Frameworks */,
+				EE901FCA2E3B6758009784E1 /* FirebaseCore in Frameworks */,
+				EE901FB82E3B669B009784E1 /* RxCocoa in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +101,15 @@
 			);
 			name = "HongikYeolgong2-iOS";
 			packageProductDependencies = (
+				EE901FB72E3B669B009784E1 /* RxCocoa */,
+				EE901FB92E3B669B009784E1 /* RxRelay */,
+				EE901FBB2E3B669B009784E1 /* RxSwift */,
+				EE901FBE2E3B66B2009784E1 /* Moya */,
+				EE901FC02E3B66B2009784E1 /* RxMoya */,
+				EE901FC32E3B66CC009784E1 /* SnapKit */,
+				EE901FC62E3B66E1009784E1 /* Then */,
+				EE901FC92E3B6758009784E1 /* FirebaseCore */,
+				EE901FCB2E3B6758009784E1 /* FirebaseRemoteConfig */,
 			);
 			productName = "HongikYeolgong2-iOS";
 			productReference = EEECC8272E37D17500F0EB32 /* HongikYeolgong2-iOS.app */;
@@ -109,6 +139,13 @@
 			);
 			mainGroup = EEECC81E2E37D17500F0EB32;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				EE901FB62E3B669B009784E1 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				EE901FBD2E3B66B2009784E1 /* XCRemoteSwiftPackageReference "Moya" */,
+				EE901FC22E3B66CC009784E1 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				EE901FC52E3B66E1009784E1 /* XCRemoteSwiftPackageReference "Then" */,
+				EE901FC82E3B6758009784E1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = EEECC8282E37D17500F0EB32 /* Products */;
 			projectDirPath = "";
@@ -343,6 +380,97 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EE901FB62E3B669B009784E1 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.9.0;
+			};
+		};
+		EE901FBD2E3B66B2009784E1 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.3;
+			};
+		};
+		EE901FC22E3B66CC009784E1 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+		EE901FC52E3B66E1009784E1 /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+		EE901FC82E3B6758009784E1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EE901FB72E3B669B009784E1 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EE901FB62E3B669B009784E1 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		EE901FB92E3B669B009784E1 /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EE901FB62E3B669B009784E1 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		EE901FBB2E3B669B009784E1 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EE901FB62E3B669B009784E1 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		EE901FBE2E3B66B2009784E1 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EE901FBD2E3B66B2009784E1 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		EE901FC02E3B66B2009784E1 /* RxMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EE901FBD2E3B66B2009784E1 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = RxMoya;
+		};
+		EE901FC32E3B66CC009784E1 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EE901FC22E3B66CC009784E1 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		EE901FC62E3B66E1009784E1 /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EE901FC52E3B66E1009784E1 /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
+		};
+		EE901FC92E3B6758009784E1 /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EE901FC82E3B6758009784E1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+		EE901FCB2E3B6758009784E1 /* FirebaseRemoteConfig */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EE901FC82E3B6758009784E1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseRemoteConfig;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EEECC81F2E37D17500F0EB32 /* Project object */;
 }
