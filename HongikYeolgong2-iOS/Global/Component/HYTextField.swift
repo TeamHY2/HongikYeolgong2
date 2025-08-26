@@ -13,13 +13,15 @@ final class HYTextField: UITextField {
     
     private let padding = UIEdgeInsets(top: 11, left: 16, bottom: 11, right: 16)
     
-    private let deleteButton = UIButton().then {
+    private lazy var deleteButton = UIButton().then {
         $0.setImage(UIImage(resource: .close), for: .normal)
+        $0.addTarget(self, action: #selector(deleteButtonTapped), for: .touchUpInside)
     }
     
     init() {
         super.init(frame: .zero)
         setUI()
+        delegate = self
     }
     
     required init?(coder: NSCoder) {
@@ -31,7 +33,7 @@ final class HYTextField: UITextField {
         textColor = .gray200
         font = .body5_r16
         layer.cornerRadius = 8
-        rightViewMode = .always
+        rightViewMode = .never
         rightView = deleteButton
     }
     
@@ -58,6 +60,28 @@ final class HYTextField: UITextField {
         var padding = super.rightViewRect(forBounds: bounds)
         padding.origin.x -= 14
         return padding
+    }
+    
+    @objc
+    func deleteButtonTapped() {
+        text = ""
+    }
+}
+
+extension HYTextField: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        rightViewMode = textField.text?.isEmpty == false ? .always : .never
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        rightViewMode = .never
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        DispatchQueue.main.async {
+            self.rightViewMode = (textField.text?.isEmpty == false) ? .always : .never
+        }
+        return true
     }
 }
 
