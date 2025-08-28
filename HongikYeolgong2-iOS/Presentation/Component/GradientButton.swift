@@ -1,0 +1,91 @@
+//
+//  GradientButton.swift
+//  HongikYeolgong2-iOS
+//
+//  Created by 최주원 on 8/29/25.
+//
+
+import UIKit
+import Then
+import SnapKit
+
+/// # 그라데이션 색상 버튼
+/// - title : 버튼 제목
+/// - onTap : 버튼 클릭 액션
+class GradientButton: UIButton {
+    // 버튼 배경 색상
+    private let bagroundColor: [[CGColor]] = [
+        [   // 활성화 색상
+            UIColor(red: 51/255, green: 79/255, blue: 178/255, alpha: 1).cgColor,
+            UIColor(red: 83/255, green: 115/255, blue: 227/255, alpha: 1).cgColor
+        ],
+        [   // 비활성화 색상
+            UIColor(red: 19/255, green: 30/255, blue: 72/255, alpha: 1).cgColor,
+            UIColor(red: 25/255, green: 38/255, blue: 88/255, alpha: 1).cgColor
+        ]
+    ]
+    
+    /// 버튼 제목
+    var title: String? {
+        didSet {
+            setTitle(title, for: .normal)
+        }
+    }
+    
+    let gradientLayer = CAGradientLayer().then {
+        $0.colors = [UIColor(red: 51/255, green: 79/255, blue: 178/255, alpha: 1).cgColor,
+                     UIColor(red: 83/255, green: 115/255, blue: 227/255, alpha: 1).cgColor]
+        $0.type = .conic
+        $0.locations = [0.0, 0.7, 1.0]
+        $0.startPoint = CGPoint(x: 0.5, y: 0.5)
+        $0.endPoint = CGPoint(x: 1, y: 0.15)
+    }
+    
+    /// 뷰 탭했을때 이벤트
+    var onTap: (() -> Void)?
+    
+    override var isEnabled: Bool{
+        didSet {
+            // 활성화 여부에따른 색상 변경
+            gradientLayer.colors = isEnabled ? bagroundColor[0] : bagroundColor[1]
+            setTitleColor(isEnabled ? .white : .gray300, for: .normal)
+            layer.borderColor = isEnabled ? UIColor.blue200.cgColor: UIColor.blue400.cgColor
+        }
+    }
+    
+    // MARK: - Initialization
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupView()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        setupView()
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        gradientLayer.frame = self.bounds
+    }
+    
+    // MARK: - Private Methods
+    private func setupView() {
+        layer.cornerRadius = 8
+        layer.masksToBounds = true
+        layer.borderColor = UIColor.blue200.cgColor
+        layer.borderWidth = 1
+        layer.insertSublayer(gradientLayer, at: 0)
+        
+        titleLabel?.font = .body2_sb16
+        
+        translatesAutoresizingMaskIntoConstraints = false
+        
+        // 이벤트 추가
+        addTarget(self, action: #selector(handleTap), for: .touchUpInside)
+    }
+    
+    @objc private func handleTap() {
+        onTap?()
+    }
+}
