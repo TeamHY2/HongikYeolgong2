@@ -54,9 +54,12 @@ enum GradientButtonType {
 }
 
 /// # 그라데이션 색상 버튼
+/// - buttonStyle : 버튼 스타일 ( 배경색 기준 선택 -> 배경, 폰트 색상 적용 )
 /// - title : 버튼 제목
 /// - onTap : 버튼 클릭 액션
+/// 생성자를 통해 GradientButton(style: .sub)사용하거나 내부 $0.buttonStyle = .sub 를 수정해서 사용하거나 편의에 따라 사용
 class GradientButton: UIButton {
+    /// 버튼 스타일 (기본, 서브(좌석 버튼용))
     var buttonStyle: GradientButtonType = .main {
         didSet {
             gradientLayer.colors = buttonStyle.bagroundColor(isEnabled: isEnabled)
@@ -72,6 +75,9 @@ class GradientButton: UIButton {
         }
     }
     
+    /// 뷰 탭했을때 이벤트
+    var onTap: (() -> Void)?
+    
     private lazy var gradientLayer = CAGradientLayer().then {
         $0.colors = buttonStyle.bagroundColor()
         $0.type = .conic
@@ -79,9 +85,6 @@ class GradientButton: UIButton {
         $0.startPoint = CGPoint(x: 0.5, y: 0.5)
         $0.endPoint = CGPoint(x: 1, y: 0.15)
     }
-    
-    /// 뷰 탭했을때 이벤트
-    var onTap: (() -> Void)?
     
     override var isEnabled: Bool{
         didSet {

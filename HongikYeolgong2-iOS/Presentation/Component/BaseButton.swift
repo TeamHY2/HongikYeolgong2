@@ -61,7 +61,7 @@ enum BaseButtonStyle {
 class BaseButton: UIButton {
     /// 버튼 스타일 ( 배경, 폰트 색상 지정 )
     /// .blue
-    var buttonStyle: BaseButtonStyle {
+    var buttonStyle: BaseButtonStyle = .gray600 {
         didSet {
             backgroundColor = buttonStyle.backgroundColor
             label.textColor = buttonStyle.fontColor
@@ -138,7 +138,7 @@ class BaseButton: UIButton {
             make.centerX.equalToSuperview()
             make.centerY.equalToSuperview()
         }
-        target(forAction: #selector(handleTap), withSender: nil)
+        addTarget(self, action: #selector(handleTap), for: .touchUpInside)
     }
 
     @objc private func handleTap() {
