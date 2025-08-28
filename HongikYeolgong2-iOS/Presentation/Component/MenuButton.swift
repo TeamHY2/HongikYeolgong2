@@ -9,6 +9,10 @@ import UIKit
 import Then
 import SnapKit
 
+/// # 메뉴 공통 버튼
+/// - title : 버튼 좌측 내용
+/// - rightContentView : 버튼 우측 view
+/// - onTap : 버튼 클릭 클로저
 class MenuButton: UIView {
     // MARK: - Public Properties
     /// 버튼 제목
