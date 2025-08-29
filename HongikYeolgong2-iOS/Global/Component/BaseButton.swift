@@ -21,7 +21,7 @@ enum BaseButtonStyle {
             case .gray600:
                 return .gray600
             case .gray800:
-                return .gray600
+                return .gray800
         }
     }
     
