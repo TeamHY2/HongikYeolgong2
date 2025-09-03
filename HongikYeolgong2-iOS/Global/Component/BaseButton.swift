@@ -131,7 +131,6 @@ class BaseButton: UIButton {
         backgroundColor = buttonStyle.backgroundColor
         layer.cornerRadius = radius
         label.textColor = buttonStyle.fontColor
-        translatesAutoresizingMaskIntoConstraints = false
 
         addSubview(stackView)
         stackView.snp.makeConstraints { make in

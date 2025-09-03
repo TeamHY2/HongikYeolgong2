@@ -64,7 +64,6 @@ class MenuButton: UIView {
     private func setupView() {
         backgroundColor = .gray800
         layer.cornerRadius = 12
-        translatesAutoresizingMaskIntoConstraints = false
 
         addSubview(stackView)
         stackView.snp.makeConstraints { make in
