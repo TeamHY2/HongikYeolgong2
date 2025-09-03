@@ -88,7 +88,6 @@ class GradientButton: UIButton {
     
     override var isEnabled: Bool{
         didSet {
-            // 활성화 여부에따른 색상 변경
             gradientLayer.colors = buttonStyle.bagroundColor(isEnabled: isEnabled)//isEnabled ? bagroundColor[0] : bagroundColor[1]
             setTitleColor(buttonStyle.fontColor(isEnabled: isEnabled), for: .normal)
             layer.borderColor = buttonStyle.borderColor(isEnabled: isEnabled)
@@ -126,8 +125,6 @@ class GradientButton: UIButton {
         layer.insertSublayer(gradientLayer, at: 0)
         
         titleLabel?.font = .body2_sb16
-        
-        translatesAutoresizingMaskIntoConstraints = false
         
         // 이벤트 추가
         addTarget(self, action: #selector(handleTap), for: .touchUpInside)
