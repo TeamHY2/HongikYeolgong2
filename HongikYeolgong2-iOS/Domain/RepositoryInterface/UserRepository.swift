@@ -6,5 +6,5 @@
 //
 
 protocol UserRepository {
-    func tokenValidTest() -> TokenValid
+    func loginUser() -> UserInfo
 }
