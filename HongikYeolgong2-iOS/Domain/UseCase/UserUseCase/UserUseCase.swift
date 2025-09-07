@@ -5,4 +5,6 @@
 //  Created by 권석기 on 9/5/25.
 //
 
-
+protocol UserUseCase {
+    func loginUser() -> UserInfo
+}

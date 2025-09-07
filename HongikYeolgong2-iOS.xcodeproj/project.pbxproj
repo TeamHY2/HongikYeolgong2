@@ -28,6 +28,7 @@
 			membershipExceptions = (
 				Data/.gitkeep,
 				Presentation/.gitkeep,
+				Presentation/Home/View/.gitkeep,
 				Resources/Info.plist,
 			);
 			target = EEECC8262E37D17500F0EB32 /* HongikYeolgong2-iOS */;
