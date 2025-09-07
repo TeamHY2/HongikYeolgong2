@@ -21,8 +21,9 @@ class MenuButton: UIView {
         set { titleLabel.text = newValue }
     }
 
-    /// 오른쪽 표시 부분
-    var rightContentView: UIView? {
+    /// 오른쪽 표시 부분 ( 기본값 이미지 - icArrowRight )
+    /// 다른 view가 필요한 경우 주입
+    var rightContentView: UIView? = UIImageView(image: .icArrowRight) {
         didSet {
             // 기존 뷰 제거
             oldValue?.removeFromSuperview()
@@ -64,6 +65,10 @@ class MenuButton: UIView {
     private func setupView() {
         backgroundColor = .gray800
         layer.cornerRadius = 12
+        
+        if let newView = rightContentView {
+            stackView.addArrangedSubview(newView)
+        }
 
         addSubview(stackView)
         stackView.snp.makeConstraints { make in
