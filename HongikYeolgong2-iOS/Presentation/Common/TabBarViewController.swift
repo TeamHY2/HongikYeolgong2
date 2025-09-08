@@ -33,10 +33,10 @@ final class TabBarViewController: UITabBarController {
     }
     
     private func addTabItems() {
-        let homeVC = HomeViewController()
-        let rankingVC = RankingViewController()
-        let recordVC = RecordViewController()
-        let settingVC = SettingViewController()
+        let homeVC = UINavigationController(rootViewController: makeHomeViewController())
+        let rankingVC = UINavigationController(rootViewController: RankingViewController())
+        let recordVC = UINavigationController(rootViewController: RecordViewController())
+        let settingVC = UINavigationController(rootViewController: SettingViewController())
         
         self.setViewControllers([homeVC, recordVC, rankingVC, settingVC], animated: false)
         self.modalPresentationStyle = .fullScreen
@@ -61,7 +61,15 @@ final class TabBarViewController: UITabBarController {
         tabFrame.origin.y = view.frame.size.height - newHeight
         tabBar.frame = tabFrame
     }
-    
+}
+
+extension TabBarViewController {
+    private func makeHomeViewController() -> HomeViewController {
+        let userRespository = DefaultUserRepository()
+        let userUseCase = DefaultUserUseCase(userRepository: userRespository)
+        let homeViewModel = HomeViewModel(userUseCase: userUseCase)
+        return .init(viewModel: homeViewModel)
+    }
 }
 
 enum TabItem: Int {

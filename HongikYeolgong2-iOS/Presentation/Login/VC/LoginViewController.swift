@@ -1,13 +1,13 @@
 //
-//  HomeViewController.swift
+//  LoginViewController.swift
 //  HongikYeolgong2-iOS
 //
-//  Created by 권석기 on 8/26/25.
+//  Created by 권석기 on 9/8/25.
 //
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
