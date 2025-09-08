@@ -26,8 +26,6 @@
 		EEECC8392E37D17700F0EB32 /* Exceptions for "HongikYeolgong2-iOS" folder in "HongikYeolgong2-iOS" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Data/.gitkeep,
-				Presentation/.gitkeep,
 				Presentation/Home/View/.gitkeep,
 				Resources/Info.plist,
 			);
