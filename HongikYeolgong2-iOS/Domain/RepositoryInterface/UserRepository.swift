@@ -6,5 +6,5 @@
 //
 
 protocol UserRepository {
-    func loginUser() -> UserInfo
+    func loginUser() async -> UserInfo
 }

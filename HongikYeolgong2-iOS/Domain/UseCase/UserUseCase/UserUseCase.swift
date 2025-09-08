@@ -6,5 +6,5 @@
 //
 
 protocol UserUseCase {
-    func loginUser() -> UserInfo
+    func loginUser() async -> UserInfo
 }

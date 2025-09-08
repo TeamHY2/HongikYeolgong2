@@ -6,5 +6,5 @@
 //
 
 struct UserInfo {
-    let token: String
+    let userName: String
 }

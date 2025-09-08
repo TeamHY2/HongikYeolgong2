@@ -6,7 +6,7 @@
 //
 
 final class DefaultUserRepository: UserRepository {
-    func loginUser() -> UserInfo {
-        .init(token: "")
+    func loginUser() async -> UserInfo {
+       return UserInfo(userName: "testUser")
     }
 }

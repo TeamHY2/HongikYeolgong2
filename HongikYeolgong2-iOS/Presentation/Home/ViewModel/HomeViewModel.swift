@@ -11,7 +11,7 @@ final class HomeViewModel: ViewModelType {
     
     private let userUseCase: UserUseCase
     private var cancellable = Set<AnyCancellable>()
-    private let userNameSubject = CurrentValueSubject<String?, Never>("")
+    private let userNameSubject = CurrentValueSubject<String?, Never>(nil)
     
     // MARK: - Input & Output
     struct Input {
@@ -23,11 +23,11 @@ final class HomeViewModel: ViewModelType {
     }
     
     func transform(_ input: Input) -> Output {
-        input.loginButtonTapped.sink { [weak self] in
-            guard let self = self else { return }
-            userNameSubject.send("testUser")
-        }
-        .store(in: &cancellable)
+        input.loginButtonTapped
+            .sink { [weak self] _ in
+                self?.fetchUserName()
+            }
+            .store(in: &cancellable)
         
        return Output(userName: userNameSubject.eraseToAnyPublisher())
     }
@@ -35,5 +35,16 @@ final class HomeViewModel: ViewModelType {
     // MARK: - Initializer
     init(userUseCase: UserUseCase) {
         self.userUseCase = userUseCase
+    }
+    
+    private func fetchUserName() {
+        Task {
+            do {
+                let user = await self.userUseCase.loginUser()
+                userNameSubject.send(user.userName)
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
     }
 }

@@ -13,7 +13,7 @@ final class DefaultUserUseCase: UserUseCase {
         self.userRepository = userRepository
     }
     
-    func loginUser() -> UserInfo {
-        userRepository.loginUser()
+    func loginUser() async -> UserInfo {
+        await userRepository.loginUser()
     }
 }
